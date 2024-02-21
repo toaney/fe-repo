@@ -59,7 +59,7 @@ const Page: React.FC<{}> = () => {
         <ul className="flex flex-col items-start w-96">
           {todoList.map((item) => {
             return (
-              <TodoItem item={item} toggleItem={toggleItem} deleteItem={deleteItem}/>
+              <TodoItem key={item.id} item={item} toggleItem={toggleItem} deleteItem={deleteItem}/>
             )
             
           })}
