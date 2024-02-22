@@ -1,15 +1,24 @@
 "use client"
-import React, {useState} from "react"; // importing FunctonComponent
+import React, {useState, useEffect} from "react"; // importing FunctonComponent
 import TodoItem from "./TodoItem"
 
 const Page: React.FC<{}> = () => {
   const [inputVal, setInputVal] = useState<string>("")
-  const [todoList, setTodoList] = useState<Array<TodoItemInterface>>([
-    {id:"key1", value:"a", completed:false},
-    {id:"key2", value:"b", completed:false},
-    {id:"key3", value:"c", completed:false}
-  ])
+  const [todoList, setTodoList] = useState<Array<TodoItemInterface>>( () => {
+    
+    const savedTodoList = localStorage.getItem("todos")
+
+    if (savedTodoList) {
+      return JSON.parse(savedTodoList)
+    } else {
+      return []
+    }
+})
       
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todoList))
+  }, [todoList])
+
   const submitItem = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
 
