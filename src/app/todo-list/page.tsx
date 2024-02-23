@@ -4,47 +4,47 @@ import TodoItem from "./TodoItem"
 
 const Page: React.FC<{}> = () => {
   const [inputVal, setInputVal] = useState<string>("")
-  const [todoList, setTodoList] = useState<Array<TodoItemInterface>>( () => {
-    
-    const savedTodoList = localStorage.getItem("todos")
+  const [todoList, setTodoList] = useState([])
+  const [hasMounted, setHasMounted] = useState(false)
 
-    if (savedTodoList) {
-      return JSON.parse(savedTodoList)
-    } else {
-      return []
-    }
-})
-      
+  useEffect (() => {
+    setHasMounted(true)
+  }, [])
+
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todoList))
+    if (hasMounted){
+      localStorage.setItem("todos", JSON.stringify(todoList))
+    }
   }, [todoList])
+
+  useEffect (() => {
+    if (hasMounted){
+      setTodoList(localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : null)
+    }
+  }, [hasMounted])
 
   const submitItem = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    // let newTodo = {
-    //   "key": crypto.randomUUID(),
-    //   "value": inputVal
-    // }
+    if (inputVal){
+      setTodoList(currentTodos => {
+        // updateLocalStorage(currentTodos)
 
-    // let newTodoList = [...todoList, newTodo]
-    // setTodoList(newTodoList)
-
-    setTodoList(currentTodos => {
-      return [
-        ...currentTodos,
-        { id: crypto.randomUUID(), value: inputVal, completed: false }
-      ]
-    })
-
-    setInputVal("")
+        return [
+          ...currentTodos,
+          { id: crypto.randomUUID(), value: inputVal, completed: false }
+        ]
+      })
+  
+      setInputVal("")
+    }
   }
 
-  const toggleItem = (id: string, completed: boolean) => {
+  const toggleItem = (id: string) => {
     setTodoList(currentTodos => {
       return currentTodos.map(todo => {
         if (todo.id === id){
-          return { ...todo, completed}
+          return { ...todo, completed: !todo.completed}
         }
 
         return todo
@@ -59,23 +59,23 @@ const Page: React.FC<{}> = () => {
   }
 
   return (
-    // <div className="flex">
-      <div className="flex flex-col items-center text-lg">
-        <h1 className="mt-10">Todo List</h1>
-        <form onSubmit={submitItem} className="my-3">
-          <input type="text" className="border-solid border border-black rounded-2xl h-11 px-3 shadow-lg w-96" value={inputVal} onChange={e => setInputVal(e.target.value)}></input>
-        </form>
-        <ul className="flex flex-col items-start w-96">
+    <div className="flex flex-col items-center text-lg">
+      <h1 className="mt-10">Todo List</h1>
+      <form onSubmit={submitItem} className="my-3">
+        <input type="text" className="border-solid border border-black rounded-2xl h-11 px-3 shadow-lg w-96" value={inputVal} onChange={e => setInputVal(e.target.value)}></input>
+      </form>
+      {todoList && <ul className="flex flex-col items-start w-96">
           {todoList.map((item) => {
             return (
               <TodoItem key={item.id} item={item} toggleItem={toggleItem} deleteItem={deleteItem}/>
+              // <li key={item.id}>
+              //   {item.value}
+              // </li>
             )
-            
           })}
         </ul>
-
-      </div>
-    // </div>
+      }
+    </div>
   )
 }
 
