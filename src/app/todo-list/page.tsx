@@ -4,8 +4,8 @@ import TodoItem from "./TodoItem"
 
 const Page: React.FC<{}> = () => {
   const [inputVal, setInputVal] = useState<string>("")
-  const [todoList, setTodoList] = useState([])
-  const [hasMounted, setHasMounted] = useState(false)
+  const [todoList, setTodoList] = useState<Array<TodoItemInterface>>([])
+  const [hasMounted, setHasMounted] = useState<boolean>(false)
 
   useEffect (() => {
     setHasMounted(true)
@@ -19,7 +19,7 @@ const Page: React.FC<{}> = () => {
 
   useEffect (() => {
     if (hasMounted){
-      setTodoList(localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : null)
+      setTodoList(localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos") || "{}") : null)
     }
   }, [hasMounted])
 
