@@ -1,9 +1,17 @@
+"use client"
+import {useState, useEffect} from "react"
 import Image from "next/image";
 import background from './images/cork-board.webp';
 import profile from './images/profile-pic.jpg';
 import profileSm from './images/profile-pic-sm.jpg';
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("resume")
+
+  function handleTabClick(tab) {
+    setActiveTab(tab)
+  }
+
   return (
     // style={{backgroundImage: `url(${img})`}}
     <div className="z-0 flex w-full h-screen bg-repeat" style={{backgroundImage: `url(${background.src})`}}>
@@ -24,7 +32,7 @@ export default function Home() {
                       Thomas Toan
                 </div>
               </div> */}
-              <div className="z-10 relative bg-sky-50 w-[300px] h-[175px] text-black shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_2px] rotate-1">
+              <div className="z-10 ml-2 relative bg-sky-50 w-[290px] h-[165px] text-black shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_2px] rotate-1">
                 <div className="absolute text-[10px] top-[5%] left-[5%] font-serif engraved2">+1 415 994 1694</div>
                 <div className="absolute w-full top-[35%]  font-serif text-center my-auto ">
                   <div><span className="text-[14px] engraved">T</span><span className="text-xs engraved">HOMAS </span><span className="text-[14px] engraved">TOAN</span><span className="text-xs"></span></div>
@@ -32,34 +40,37 @@ export default function Home() {
                 </div>
                 <div className="absolute flex w-full justify-center bottom-[5%] text-[8px] font-serif engraved2">San Francisco Bay Area • Toaney@gmail.com</div>
               </div>
+              <div>
+                <p>Active Tab: {activeTab}</p>
+              </div>
           </div>
           {/* Navigation Tabs */}
-          <div className="navigation flex flex-col justify-start h-screen  w-12 text-black">
-            <div className="z-10 mb-1 bg-orange-100 w-24 h-36 rounded-s-2xl flex justify-start items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]">
+          <div className="navigation flex flex-col justify-start h-screen  w-11 text-black">
+            <button onClick={() => {handleTabClick("1")}} className={`${activeTab === "1" ? "z-30 shadow-[rgba(0,0,5,0.3)_-20px_0px_6px_1px]" : "z-10 shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]"} mb-1 bg-orange-100 w-16 h-36 rounded-s-2xl flex justify-start items-center `}>
               <div className="rotate-[-90deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
                 yol
               </div>
-            </div>
-            <div className="z-10 mb-1 bg-orange-100 w-24 h-36 rounded-s-2xl flex justify-start items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]">
+            </button>
+            <button onClick={() => {handleTabClick("2")}} className={`${activeTab === "2" ? "z-30 shadow-[rgba(0,0,5,0.3)_-15px_0px_6px_2px]" : "z-10 shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]"} mb-1 pr-2 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-center items-center `}>
               <div className="rotate-[-90deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
                 yolafksjaslfkj
               </div>
-            </div>
-            <div className="z-30 mb-1 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-center items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]">
+            </button>
+            <button onClick={() => {handleTabClick("resume")}} className={`${activeTab === "resume" ? "z-30 shadow-[rgba(0,0,5,0.3)_-15px_0px_6px_2px]" : "z-10"} mb-1 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-center items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
               <div className="rotate-[-90deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
                 resume
               </div>
-            </div>
-            <div className="z-10 mb-1 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-start items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]">
+            </button>
+            <button onClick={() => {handleTabClick("4")}} className={`${activeTab === "4" ? "z-30 shadow-[rgba(0,0,5,0.3)_-15px_0px_6px_2px]" : "z-10"} mb-1 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-start items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
               <div className="rotate-[-90deg] bg-white px-2 ml-1 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
                 yolewfgrb
               </div>
-            </div>
-            <div className="z-10 mb-1 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-center items-center inset-20 shadow-[rgba(0,0,4,0.1)_-8px_2px_5px_0px]">
+            </button>
+            <button onClick={() => {handleTabClick("5")}} className={`${activeTab === "5" ? "z-30 shadow-[rgba(0,0,5,0.3)_-15px_0px_6px_2px]" : "z-10"} mb-1 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-center items-center inset-20 shadow-[rgba(0,0,4,0.1)_-8px_2px_5px_0px]`}>
               <div className="rotate-[-91deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
                 resume
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </aside>
