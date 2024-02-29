@@ -8,7 +8,7 @@ import profileSm from './images/profile-pic-sm.jpg';
 export default function Home() {
   const [activeTab, setActiveTab] = useState("resume")
 
-  function handleTabClick(tab) {
+  function handleTabClick(tab:any) {
     setActiveTab(tab)
   }
 
@@ -40,9 +40,6 @@ export default function Home() {
                 </div>
                 <div className="absolute flex w-full justify-center bottom-[5%] text-[8px] font-serif engraved2">San Francisco Bay Area • Toaney@gmail.com</div>
               </div>
-              <div>
-                <p>Active Tab: {activeTab}</p>
-              </div>
           </div>
           {/* Navigation Tabs */}
           <div className="navigation flex flex-col justify-start h-screen  w-11 text-black">
@@ -53,7 +50,7 @@ export default function Home() {
             </button>
             <button onClick={() => {handleTabClick("2")}} className={`${activeTab === "2" ? "z-30 shadow-[rgba(0,0,5,0.3)_-15px_0px_6px_2px]" : "z-10 shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]"} mb-1 pr-2 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-center items-center `}>
               <div className="rotate-[-90deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
-                yolafksjaslfkj
+                code
               </div>
             </button>
             <button onClick={() => {handleTabClick("resume")}} className={`${activeTab === "resume" ? "z-30 shadow-[rgba(0,0,5,0.3)_-15px_0px_6px_2px]" : "z-10"} mb-1 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-center items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
@@ -68,7 +65,7 @@ export default function Home() {
             </button>
             <button onClick={() => {handleTabClick("5")}} className={`${activeTab === "5" ? "z-30 shadow-[rgba(0,0,5,0.3)_-15px_0px_6px_2px]" : "z-10"} mb-1 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-center items-center inset-20 shadow-[rgba(0,0,4,0.1)_-8px_2px_5px_0px]`}>
               <div className="rotate-[-91deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
-                resume
+                design
               </div>
             </button>
           </div>
