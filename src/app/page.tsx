@@ -81,9 +81,9 @@ export default function Home() {
                   <div className="ml-10 mt-10 text-2xl rotate-1">
                     Links:
                     <ul className="ml-10">
-                      <li>LinkedIn</li>
-                      <li>GitHub</li>
-                      <li>Behance</li>
+                      <li><a href="https://www.linkedin.com/in/thomas-toan/">LinkedIn</a></li>
+                      <li><a href="https://github.com/toaney">GitHub</a></li>
+                      <li><a href="https://www.behance.net/toaney">Behance</a></li>
                     </ul>
                   </div>
                 </div>
