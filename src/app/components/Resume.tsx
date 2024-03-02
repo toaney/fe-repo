@@ -144,8 +144,14 @@ const Resume = () => {
       </div> */}
 
 
-<div className="z-20 ml-2 absolute top-[425px] left-0 w-[140px] h-[90px] text-black flex flex-row shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px] -rotate-1">
-                  <div className="h-[90px] w-[55px] opacity-80 bg-red-600"></div>
+                <div className="z-20 ml-2 absolute top-[425px] left-0 w-[140px] h-[90px] text-black flex flex-row shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px] -rotate-1">
+                  <div className="h-[90px] w-[55px] opacity-80 bg-red-600 flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth={2.15} stroke="#00078d" fill="purple"
+            fill-opacity="0.1" stroke-opacity="1" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                    </svg>
+
+                  </div>
                   <div className="h-[90px] w-[85px] opacity-35 bg-indigo-50"></div>
                   {/* <div className="absolute w-full top-[35%] font-serif text-center my-auto ">
                     <div><span className="text-[14px] engraved">T</span><span className="text-xs engraved">HOMAS </span><span className="text-[14px] engraved">TOAN</span><span className="text-xs"></span></div>

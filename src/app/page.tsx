@@ -7,6 +7,8 @@ import profile from './images/profile-pic.jpg';
 import profileSm from './images/profile-pic-sm.jpg';
 import Resume from './components/Resume';
 import { Nanum_Pen_Script } from "@next/font/google";
+// import { Heroicon } from 'heroicons';
+// import { Mail } from 'heroicons/icons';
 
 const nanum_pen_script = Nanum_Pen_Script({ subsets: ["latin"], weight: "400" });
 
@@ -27,7 +29,20 @@ export default function Home() {
 
       <button onClick={() => {setCollapseSidebar(!collapseSidebar)}} className="z-20 absolute top-[0px] left-0 w-[70px] h-[45px] text-black flex flex-row shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px] -rotate-1">
         <div className="h-[45px] w-[15px] opacity-65 bg-indigo-50"></div>
-        <div className="h-[45px] w-[55px] opacity-90 bg-yellow-300"></div>
+        <div className="h-[45px] w-[55px] opacity-90 bg-yellow-300 flex justify-center items-center">
+          {collapseSidebar? 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth={2.15} stroke="#00078d" fill="purple"
+            fill-opacity="0.1" stroke-opacity="0.9" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          :
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth={2.15} stroke="#00078d" fill="purple"
+              fill-opacity="0.1" stroke-opacity="0.9" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+          }
+        </div>
+
                   {/* <div className="absolute w-full top-[35%] font-serif text-center my-auto ">
                     <div><span className="text-[14px] engraved">T</span><span className="text-xs engraved">HOMAS </span><span className="text-[14px] engraved">TOAN</span><span className="text-xs"></span></div>
                     <div className="text-[10px] leading-3 engraved">SOFTWARE ENGINEER</div>
@@ -42,7 +57,6 @@ export default function Home() {
           <div className="navigation-container mt-2 flex flex-row content-end justify-end">
             <div className="navigation flex flex-col w-[calc(100%_-_12px)] ">
                 <br />
-                <div>test ${collapseSidebar ? "true" : "false"}</div>
                 <div className="z-10 -rotate-6 max-w-[300px] shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]">
                   <Image src={profile.src} width={500} height={500} alt="Thomas Toan profile pic" className="-z-10 max-w-[300px] max-h-[300px] border-t-[18px] border-x-[14px] rounded-t-sm border-slate-50"/>
                   <div className="bg-slate-50 w-[300px] h-16 rounded-b-sm">
@@ -69,6 +83,11 @@ export default function Home() {
                   <div className="absolute w-full top-[35%] font-serif text-center my-auto ">
                     <div><span className="text-[14px] engraved">T</span><span className="text-xs engraved">HOMAS </span><span className="text-[14px] engraved">TOAN</span><span className="text-xs"></span></div>
                     <div className="text-[10px] leading-3 engraved">SOFTWARE ENGINEER</div>
+                  </div>
+                  <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+</svg>
                   </div>
                   <div className="absolute flex w-full justify-center bottom-[5%] text-[8px] font-serif engraved2">San Francisco Bay Area • Toaney@gmail.com</div>
                 </div>
