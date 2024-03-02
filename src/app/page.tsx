@@ -7,8 +7,6 @@ import profile from './images/profile-pic.jpg';
 import profileSm from './images/profile-pic-sm.jpg';
 import Resume from './components/Resume';
 import { Nanum_Pen_Script } from "@next/font/google";
-// import { Heroicon } from 'heroicons';
-// import { Mail } from 'heroicons/icons';
 
 const nanum_pen_script = Nanum_Pen_Script({ subsets: ["latin"], weight: "400" });
 
@@ -78,19 +76,18 @@ export default function Home() {
                   </div>
                   <div className="absolute flex w-full justify-center bottom-[5%] text-[8px] font-serif engraved2">San Francisco Bay Area • Toaney@gmail.com</div>
                 </div>
-                <div className=" ml-2 mt-16 relative bg-yellow-50 w-[280px] h-[280px] text-black shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_2px] -rotate-1">
-                  <div className="absolute text-[10px] top-[5%] left-[5%] font-serif engraved2">+1 415 994 1694</div>
-                  <div className="absolute w-full top-[35%] font-serif text-center my-auto ">
-                    <div><span className="text-[14px] engraved">T</span><span className="text-xs engraved">HOMAS </span><span className="text-[14px] engraved">TOAN</span><span className="text-xs"></span></div>
-                    <div className="text-[10px] leading-3 engraved">SOFTWARE ENGINEER</div>
+                {/* yellow post-it */}
+                <div className="ml-2 mt-16 relative bg-yellow-50 w-[280px] h-[280px] text-[#00078d] shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_2px] -rotate-1 font-nanum-pen-script">
+                  <div className="ml-10 mt-10 text-2xl rotate-1">
+                    Links:
+                    <ul className="ml-10">
+                      <li>LinkedIn</li>
+                      <li>GitHub</li>
+                      <li>Behance</li>
+                    </ul>
                   </div>
-                  <div>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-</svg>
-                  </div>
-                  <div className="absolute flex w-full justify-center bottom-[5%] text-[8px] font-serif engraved2">San Francisco Bay Area • Toaney@gmail.com</div>
                 </div>
+                {/* end yellow post-it */}
             </div>
             {/* Navigation Tabs */}
             <div className="navigation flex flex-col justify-start w-11 text-black">
@@ -145,7 +142,7 @@ export default function Home() {
       </div>
       <br/>
       {/* <body className={nanum_pen_script.className}>{children}</body> */}
-      <div className="flex mb-5 text-md text-blue-950 justify-center text-white nanum_pen_script.className">
+      <div className="flex mb-5 text-2xl text-[#00078d] justify-center font-nanum-pen-script">
         © {new Date().getFullYear()} Thomas Toan
       </div>
     </div>
