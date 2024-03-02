@@ -12,6 +12,7 @@ const nanum_pen_script = Nanum_Pen_Script({ subsets: ["latin"], weight: "400" })
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("resume")
+  const [collapseSidebar, setCollapseSidebar] = useState(false)
 
   function handleTabClick(tab:any) {
     setActiveTab(tab)
@@ -23,11 +24,25 @@ export default function Home() {
       {/* <Head>
         <title>Thomas Toan</title>
       </Head> */}
+
+      <button onClick={() => {setCollapseSidebar(!collapseSidebar)}} className="z-20 absolute top-[0px] left-0 w-[70px] h-[45px] text-black flex flex-row shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px] -rotate-1">
+        <div className="h-[45px] w-[15px] opacity-65 bg-indigo-50"></div>
+        <div className="h-[45px] w-[55px] opacity-90 bg-yellow-300"></div>
+                  {/* <div className="absolute w-full top-[35%] font-serif text-center my-auto ">
+                    <div><span className="text-[14px] engraved">T</span><span className="text-xs engraved">HOMAS </span><span className="text-[14px] engraved">TOAN</span><span className="text-xs"></span></div>
+                    <div className="text-[10px] leading-3 engraved">SOFTWARE ENGINEER</div>
+                  </div>
+                  <div className="absolute flex w-full justify-center bottom-[5%] text-[8px] font-serif engraved2">San Francisco Bay Area • Toaney@gmail.com</div> */}
+      </button>
+
+
+
       <div className="flex">
-        <aside className="pg-repeat w-1/6" style={{backgroundImage: `url(./cork-board)`}}>
+        <aside className={`${collapseSidebar === true ? "w-[80px]" : "w-1/4" } pg-repeat`} style={{backgroundImage: `url(./cork-board)`}}>
           <div className="navigation-container mt-2 flex flex-row content-end justify-end">
             <div className="navigation flex flex-col w-[calc(100%_-_12px)] ">
                 <br />
+                <div>test ${collapseSidebar ? "true" : "false"}</div>
                 <div className="z-10 -rotate-6 max-w-[300px] shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]">
                   <Image src={profile.src} width={500} height={500} alt="Thomas Toan profile pic" className="-z-10 max-w-[300px] max-h-[300px] border-t-[18px] border-x-[14px] rounded-t-sm border-slate-50"/>
                   <div className="bg-slate-50 w-[300px] h-16 rounded-b-sm">
@@ -94,7 +109,7 @@ export default function Home() {
           </div>
         </aside>
         {/* Main Content */}
-        <main className="static z-10 mt-2 mb-2 pb-18  bg-orange-100 rounded-s-3xl w-3/4 shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]">
+        <main className={`${collapseSidebar === true ? "w-[vw - 80px]" : "w-3/4" } static z-10 mt-2 mb-2 pb-18  bg-orange-100 rounded-s-3xl shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
           {/* decorative pages */}
           {/* <div className="z-20 absolute bg-white drop-shadow-lg h-screen w-8/12 mt-4 ml-6 -rotate-[.5px]">
           </div>
