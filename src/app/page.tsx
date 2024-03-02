@@ -81,9 +81,9 @@ export default function Home() {
                   <div className="ml-10 mt-10 text-2xl rotate-1">
                     Links:
                     <ul className="ml-10">
-                      <li><a href="https://www.linkedin.com/in/thomas-toan/">LinkedIn</a></li>
-                      <li><a href="https://github.com/toaney">GitHub</a></li>
-                      <li><a href="https://www.behance.net/toaney">Behance</a></li>
+                      <li><a href="https://www.linkedin.com/in/thomas-toan/" target="_blank">LinkedIn</a></li>
+                      <li><a href="https://github.com/toaney" target="_blank">GitHub</a></li>
+                      <li><a href="https://www.behance.net/toaney" target="_blank">Behance</a></li>
                     </ul>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
         </aside>
         {/* Main Content */}
-        <main className={`${collapseSidebar === true ? "w-[vw - 80px]" : "w-3/4" } static z-10 mt-2 mb-2 pb-18  bg-orange-100 rounded-s-3xl shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
+        <main className={`${collapseSidebar === true ? "w-full" : "w-3/4" } static z-10 mt-2 mb-2 pb-18  bg-orange-100 rounded-s-3xl rounded-e-md shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
           {/* decorative pages */}
           {/* <div className="z-20 absolute bg-white drop-shadow-lg h-screen w-8/12 mt-4 ml-6 -rotate-[.5px]">
           </div>
