@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 // import { GoogleAnalytics } from '@next/third-parties/google';
+import { Nanum_Pen_Script } from "@next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const nanum_pen_script = Nanum_Pen_Script({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Demo",
@@ -17,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* <body className={nanum_pen_script.className}>{children}</body> */}
       <body className={inter.className}>{children}</body>
       {/* <GoogleAnalytics gaId='G-EZ2EMY8M97' /> */}
     </html>
