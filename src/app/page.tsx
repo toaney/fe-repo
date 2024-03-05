@@ -14,7 +14,14 @@ export default function Home() {
   const [collapseSidebar, setCollapseSidebar] = useState(false)
 
   function handleTabClick(tab:any) {
+    console.log(window.innerWidth)
+    let width = window.innerWidth
+
     setActiveTab(tab)
+
+    if (width < 640){
+      setCollapseSidebar(true)
+    }
   }
 
   return (
