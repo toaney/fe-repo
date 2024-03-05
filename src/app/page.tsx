@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     // style={{backgroundImage: `url(${img})`}}
-    <div className="z-0 flex flex-col w-full bg-repeat" style={{backgroundImage: `url(${background.src})`}}>
+    <div className="z-0 flex flex-col w-full min-h-[100vh] bg-repeat" style={{backgroundImage: `url(${background.src})`}}>
       <button onClick={() => {setCollapseSidebar(!collapseSidebar)}} className="z-40 absolute top-[0px] left-0 w-[70px] h-[45px] text-black flex flex-row shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px] -rotate-1">
         <div className="h-[45px] w-[15px] opacity-65 bg-indigo-50"></div>
         <div className="h-[45px] w-[55px] opacity-90 bg-yellow-300 flex justify-center items-center">
