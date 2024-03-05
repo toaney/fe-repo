@@ -128,7 +128,9 @@ export default function Home() {
         </aside>
         {/* Main Content */}
         {/* "sm:w-full md:w-full" : "sm:w-1/12 md:w-3/4" */}
-        <main className={`${collapseSidebar === true ? "w-full md:w-full" : "w-[5%] sm:w-3/4" } ${activeTab === "1" ? "rounded-ss-none rounded-se-md" : "rounded-e-md"} static z-10 mt-2 mb-2 pb-18  bg-orange-100 rounded-s-3xl shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
+        
+        <main className={`${collapseSidebar === true ? "w-full md:w-full" : "w-[5%] sm:w-3/4" } ${activeTab === "1" ? "rounded-ss-none rounded-se-md" : "rounded-e-xs"} static flex flex-row z-10 mt-2 mb-2 pb-18  bg-orange-100 rounded-s-3xl shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
+
           {/* decorative pages */}
           {/* <div className="z-20 absolute bg-white drop-shadow-lg h-screen w-8/12 mt-4 ml-6 -rotate-[.5px]">
           </div>
@@ -138,6 +140,10 @@ export default function Home() {
           <div className={`${collapseSidebar === true ? "" : "hidden sm:block" } z-30`}>
             {/* {collapseSidebar && <Resume/>} */}
             <Resume/>
+          </div>
+          <div className="block xl:ml-[50px] 2xl:ml-[15vw] z-50 bg-orange-100 w-0 shadow-[rgba(0,0,4,0.01)_0px_5px_3px_4px]">
+
+            
           </div>
 
 
