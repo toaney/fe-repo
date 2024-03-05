@@ -2,7 +2,7 @@
 import {useState, useEffect} from "react"
 import Image from "next/image";
 import background from './images/cork-board.webp';
-import profile from './images/profile-pic.jpg';
+import profile from '../../public/profile-pic.jpg';
 import profileSm from './images/profile-pic-sm.jpg';
 import Resume from './components/Resume';
 import { Nanum_Pen_Script } from "@next/font/google";
@@ -20,7 +20,7 @@ export default function Home() {
   return (
     // style={{backgroundImage: `url(${img})`}}
     <div className="z-0 flex flex-col w-full bg-repeat" style={{backgroundImage: `url(${background.src})`}}>
-      <button onClick={() => {setCollapseSidebar(!collapseSidebar)}} className="z-20 absolute top-[0px] left-0 w-[70px] h-[45px] text-black flex flex-row shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px] -rotate-1">
+      <button onClick={() => {setCollapseSidebar(!collapseSidebar)}} className="z-40 absolute top-[0px] left-0 w-[70px] h-[45px] text-black flex flex-row shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px] -rotate-1">
         <div className="h-[45px] w-[15px] opacity-65 bg-indigo-50"></div>
         <div className="h-[45px] w-[55px] opacity-90 bg-yellow-300 flex justify-center items-center">
           {collapseSidebar? 
@@ -46,12 +46,12 @@ export default function Home() {
 
 
       <div className="flex">
-        <aside className={`${collapseSidebar === true ? "w-[80px]" : "w-1/4" } pg-repeat`} style={{backgroundImage: `url(./cork-board)`}}>
+        <aside className={`${collapseSidebar === true ? "sm:w-[20px] md:w-[80px]" : "sm:w-full md:w-1/4" } pg-repeat`}>
           <div className="navigation-container mt-2 flex flex-row content-end justify-end">
             <div className="navigation flex flex-col w-[calc(100%_-_12px)] ">
                 <br />
                 <div className="z-10 -rotate-6 max-w-[300px] shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]">
-                  <Image src={profile.src} width={500} height={500} alt="Thomas Toan profile pic" className="-z-10 max-w-[300px] max-h-[300px] border-t-[18px] border-x-[14px] rounded-t-sm border-slate-50"/>
+                  <Image src={profile} width={500} height={500} unoptimized alt="Thomas Toan profile pic" className="-z-10 max-w-[300px] max-h-[300px] border-t-[18px] border-x-[14px] rounded-t-sm border-slate-50"/>
                   <div className="bg-slate-50 w-[300px] h-16 rounded-b-sm">
                     <span className="label-maker mt-2 ml-[10%] tracking-tighter"> Thomas Toan</span>
                   </div>
@@ -86,41 +86,41 @@ export default function Home() {
             </div>
             {/* Navigation Tabs */}
             <div className="navigation flex flex-col justify-start w-11 text-black">
-              <button onClick={() => {handleTabClick("1")}} className={`${activeTab === "1" ? "z-30 shadow-[rgba(0,0,5,0.4)_-10px_0px_11px_-5px]" : "z-10 shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]"} mb-1 bg-orange-100 w-16 h-36 rounded-s-2xl flex justify-start items-center `}>
-                <div className="rotate-[-90deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
-                  yol
+              <button onClick={() => {handleTabClick("1")}} className={`${activeTab === "1" ? "z-30 w-12 shadow-[rgba(0,0,5,0.4)_-10px_0px_11px_-5px]" : "z-10 w-16 shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]"} mb-1 bg-orange-100 h-36 rounded-s-2xl flex justify-start items-center `}>
+                <div className="rotate-[-90deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px]">
+                  
                 </div>
               </button>
-              <button onClick={() => {handleTabClick("2")}} className={`${activeTab === "2" ? "z-30 shadow-[rgba(0,0,5,0.4)_-10px_0px_11px_-5px]" : "z-10 shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]"} mb-1 pr-2 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-center items-center `}>
-                <div className="rotate-[-90deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
-                  code
+              <button onClick={() => {handleTabClick("2")}} className={`${activeTab === "2" ? "z-30 shadow-[rgba(0,0,5,0.4)_-10px_0px_11px_-5px]" : "z-10 shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]"} mb-1 pr-2 bg-orange-100 w-12 h-36 rounded-s-2xl flex justify-center items-center `}>
+                <div className="rotate-[-90deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px]">
+                  
                 </div>
               </button>
-              {/* <button onClick={() => {handleTabClick("resume")}} className={`${activeTab === "resume" ? "z-30 shadow-[rgba(0,0,5,0.3)_-15px_0px_6px_2px]" : "z-10"} mb-1 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-center items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
-                <div className="rotate-[-90deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
+              {/* <button onClick={() => {handleTabClick("resume")}} className={`${activeTab === "resume" ? "z-30 shadow-[rgba(0,0,5,0.3)_-15px_0px_6px_2px]" : "z-10"} mb-1 bg-orange-100 w-12 h-36 rounded-s-2xl flex justify-center items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
+                <div className="rotate-[-90deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px]">
                   resume
                 </div>
               </button> */}
-              <button onClick={() => {handleTabClick("resume")}} className={`${activeTab === "resume" ? "z-30 shadow-[rgba(0,0,5,0.4)_-11px_0px_10px_-5px]" : "z-10"} mb-1 bg-orange-100 w-16 h-36 rounded-s-2xl flex justify-center items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
-                <div className="rotate-[-90deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
+              <button onClick={() => {handleTabClick("resume")}} className={`${activeTab === "resume" ? "z-30 shadow-[rgba(0,0,5,0.4)_-11px_0px_10px_-5px]" : "z-10"} mb-1 bg-orange-100 w-12 h-36 rounded-s-2xl flex justify-center items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
+                <div className="rotate-[-90deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px]">
                   resume
                 </div>
               </button>
-              <button onClick={() => {handleTabClick("4")}} className={`${activeTab === "4" ? "z-30 shadow-[rgba(0,0,5,0.4)_-10px_0px_11px_-5px]" : "z-10"} mb-1 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-start items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
-                <div className="rotate-[-90deg] bg-white px-2 ml-1 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
-                  yolewfgrb
+              <button onClick={() => {handleTabClick("4")}} className={`${activeTab === "4" ? "z-30 shadow-[rgba(0,0,5,0.4)_-10px_0px_11px_-5px]" : "z-10"} mb-1 bg-orange-100 w-12 h-36 rounded-s-2xl flex justify-start items-center shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
+                <div className="rotate-[-90deg] bg-white px-2 ml-1 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px]">
+                  
                 </div>
               </button>
-              <button onClick={() => {handleTabClick("5")}} className={`${activeTab === "5" ? "z-30 shadow-[rgba(0,0,5,0.4)_-10px_0px_11px_-5px]" : "z-10"} mb-1 bg-orange-100 w-14 h-36 rounded-s-2xl flex justify-center items-center inset-20 shadow-[rgba(0,0,4,0.1)_-8px_2px_5px_0px]`}>
-                <div className="rotate-[-91deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px] blur-[.25px]">
-                  design
+              <button onClick={() => {handleTabClick("5")}} className={`${activeTab === "5" ? "z-30 shadow-[rgba(0,0,5,0.4)_-10px_0px_11px_-5px]" : "z-10"} mb-1 bg-orange-100 w-12 h-36 rounded-s-2xl flex justify-center items-center inset-20 shadow-[rgba(0,0,4,0.1)_-8px_2px_5px_0px]`}>
+                <div className="rotate-[-91deg] bg-white px-2 shadow-[rgba(0,0,4,0.1)_-1px_1px_2px_0px]">
+                  
                 </div>
               </button>
             </div>
           </div>
         </aside>
         {/* Main Content */}
-        <main className={`${collapseSidebar === true ? "w-full" : "w-3/4" } static z-10 mt-2 mb-2 pb-18  bg-orange-100 rounded-s-3xl rounded-e-md shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
+        <main className={`${collapseSidebar === true ? "sm:w-full md:w-full" : "sm:w-1/12 md:w-3/4" } ${activeTab === "1" ? "rounded-ss-none rounded-se-md" : "rounded-e-md"} static z-10 mt-2 mb-2 pb-18  bg-orange-100 rounded-s-3xl shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
           {/* decorative pages */}
           {/* <div className="z-20 absolute bg-white drop-shadow-lg h-screen w-8/12 mt-4 ml-6 -rotate-[.5px]">
           </div>

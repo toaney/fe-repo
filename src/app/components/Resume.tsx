@@ -130,13 +130,13 @@ const Resume = () => {
       </div> */}
 
 
-<div className="z-20 absolute top-0 left-3 bg-white h-full w-5 ml-6 -rotate-[.75deg] shadow-[rgba(0,0,5,0.3)_-7px_0px_6px_-5px]">
+<div className="z-20 absolute top-0 left-3 bg-white h-full w-6 ml-6 -rotate-[.75deg] shadow-[rgba(0,0,5,0.3)_-7px_0px_6px_-5px]">
       </div>
-<div className="z-20 absolute top-0 left-2 bg-white h-full w-5 ml-6 -rotate-[.5px] shadow-[rgba(0,0,5,0.3)_-7px_0px_6px_-5px]">
+<div className="z-20 absolute top-0 left-2 bg-white h-full w-6 ml-6 -rotate-[.5px] shadow-[rgba(0,0,5,0.3)_-7px_0px_6px_-5px]">
       </div>
-<div className="z-20 absolute top-0 left-2 bg-white h-full w-5 ml-7 rotate-[.4deg] shadow-[rgba(0,0,5,0.3)_-7px_0px_6px_-5px]">
+<div className="z-20 absolute top-0 left-2 bg-white h-full w-6 ml-7 rotate-[.4deg] shadow-[rgba(0,0,5,0.3)_-7px_0px_6px_-5px]">
       </div>
-<div className="z-20 absolute top-0 left-3 bg-white h-full w-5 ml-7 shadow-[rgba(0,0,5,0.3)_-7px_0px_6px_-5px]">
+<div className="z-20 absolute top-0 left-3 bg-white h-full w-6 ml-7 shadow-[rgba(0,0,5,0.3)_-7px_0px_6px_-5px]">
       </div>
       {/* <div className="z-20 top-0 absolute bg-white drop-shadow-lg h-screen w-5 mt-6 ml-6 rotate-1">
       </div>
@@ -146,7 +146,7 @@ const Resume = () => {
 
                 <div className="z-20 ml-2 absolute top-[425px] left-0 w-[140px] h-[90px] text-black flex flex-row shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px] -rotate-1">
                   <div className="h-[90px] w-[55px] opacity-80 bg-red-600 flex justify-center items-center">
-                    <div className="rotate-[-90deg] opacity-100 text-xl px-2 text-[#00078d] justify-center font-nanum-pen-script blur-[.25px]">
+                    <div className="rotate-[-90deg] opacity-100 text-xl px-2 text-[#00078d] justify-center font-nanum-pen-script">
                       <a href="thomas-toan-resume.pdf" download>download</a>
                     </div>
                   </div>
