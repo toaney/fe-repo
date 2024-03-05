@@ -70,7 +70,7 @@ export default function Home() {
                        Thomas Toan
                   </div>
                 </div> */}
-                <div className="z-10 ml-2 relative bg-sky-50 w-[290px] h-[165px] text-black shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_2px] rotate-1">
+                <div className="z-10 ml-3 relative bg-sky-50 w-[325px] h-[185px] text-black shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_2px] rotate-1">
                   <div className="absolute text-[10px] top-[5%] left-[5%] font-serif engraved2">+1 415 994 1694</div>
                   <div className="absolute w-full top-[35%] font-serif text-center my-auto ">
                     <div><span className="text-[14px] engraved">T</span><span className="text-xs engraved">HOMAS </span><span className="text-[14px] engraved">TOAN</span><span className="text-xs"></span></div>
@@ -79,7 +79,7 @@ export default function Home() {
                   <div className="absolute flex w-full justify-center bottom-[5%] text-[8px] font-serif engraved2">San Francisco Bay Area • Toaney@gmail.com</div>
                 </div>
                 {/* yellow post-it */}
-                <div className="ml-2 mt-16 relative bg-yellow-50 w-[280px] h-[280px] text-[#00078d] shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_2px] -rotate-1 font-nanum-pen-script">
+                <div className="ml-8 mt-16 relative bg-yellow-50 w-[280px] h-[280px] text-[#00078d] shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_2px] -rotate-1 font-nanum-pen-script">
                   <div className="ml-10 mt-10 text-2xl rotate-1">
                     Links:
                     <ul className="ml-10">
