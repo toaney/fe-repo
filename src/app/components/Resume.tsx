@@ -146,7 +146,7 @@ const Resume = () => {
 
                 <div className="z-20 ml-2 absolute top-[425px] left-0 w-[140px] h-[90px] text-black flex flex-row shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px] -rotate-1">
                   <div className="h-[90px] w-[55px] opacity-80 bg-red-600 flex justify-center items-center">
-                    <div className="rotate-[-90deg] opacity-100 text-xl px-2 text-[#00078d] justify-center font-nanum-pen-script">
+                    <div className="rotate-[-90deg] opacity-100 text-xl px-2 text-[#00078d] justify-center font-nanum-pen-script blur-[.25px]">
                       <a href="thomas-toan-resume.pdf" download>download</a>
                     </div>
                   </div>

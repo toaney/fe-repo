@@ -46,7 +46,7 @@ export default function Home() {
 
 
       <div className="flex">
-        <aside className={`${collapseSidebar === true ? "sm:w-[20px] md:w-[80px]" : "sm:w-full md:w-1/4" } pg-repeat`}>
+        <aside className={`${collapseSidebar === true ? "w-[60px] md:w-[60px]" : "w-[95%] sm:w-1/4"  } `}>
           <div className="navigation-container mt-2 flex flex-row content-end justify-end">
             <div className="navigation flex flex-col w-[calc(100%_-_12px)] ">
                 <br />
@@ -120,14 +120,16 @@ export default function Home() {
           </div>
         </aside>
         {/* Main Content */}
-        <main className={`${collapseSidebar === true ? "sm:w-full md:w-full" : "sm:w-1/12 md:w-3/4" } ${activeTab === "1" ? "rounded-ss-none rounded-se-md" : "rounded-e-md"} static z-10 mt-2 mb-2 pb-18  bg-orange-100 rounded-s-3xl shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
+        {/* "sm:w-full md:w-full" : "sm:w-1/12 md:w-3/4" */}
+        <main className={`${collapseSidebar === true ? "w-full md:w-full" : "w-[5%] sm:w-3/4" } ${activeTab === "1" ? "rounded-ss-none rounded-se-md" : "rounded-e-md"} static z-10 mt-2 mb-2 pb-18  bg-orange-100 rounded-s-3xl shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]`}>
           {/* decorative pages */}
           {/* <div className="z-20 absolute bg-white drop-shadow-lg h-screen w-8/12 mt-4 ml-6 -rotate-[.5px]">
           </div>
           <div className="z-20 absolute bg-white drop-shadow-lg h-screen mt-6 ml-6 rotate-1">
           </div> */}
           {/* end decorative pages */}
-          <div className="z-30 max-w-full">
+          <div className={`${collapseSidebar === true ? "" : "hidden sm:block" } z-30`}>
+            {/* {collapseSidebar && <Resume/>} */}
             <Resume/>
           </div>
 
