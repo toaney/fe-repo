@@ -57,7 +57,7 @@ export default function Home() {
           <div className="navigation-container mt-2 flex flex-row content-end justify-end">
             <div className="navigation flex flex-col w-[calc(100%_-_12px)] ">
                 <br />
-                <div className="z-10 -rotate-6 max-w-[300px] shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]">
+                <div className="z-10 ml-2 -rotate-[4deg] max-w-[300px] shadow-[rgba(0,0,5,0.2)_-3px_2px_3px_0px]">
                   <Image src={profile} width={500} height={500} unoptimized alt="Thomas Toan profile pic" className="-z-10 max-w-[300px] max-h-[300px] border-t-[18px] border-x-[14px] rounded-t-sm border-slate-50"/>
                   <div className="bg-slate-50 w-[300px] h-16 rounded-b-sm">
                     <span className="label-maker mt-2 ml-[10%] tracking-tighter"> Thomas Toan</span>
