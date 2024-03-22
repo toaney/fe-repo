@@ -9,8 +9,6 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        "barlow-condensed": "var(--font-barlow-condensed)",
-        "nanum-pen-script": "var(--font-nanum-pen-script)",
         "inter-medium": "var(--font-inter)",
       },
     },
